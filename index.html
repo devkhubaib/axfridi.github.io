@@ -4,29 +4,22 @@
   <meta charset="UTF-8">
   <title>Axfridi Agency</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- PAGE LOAD INTRO -->
+<!-- INTRO -->
 <div class="intro">
   <h1 class="neon-text">Axfridi Agency</h1>
 </div>
 
 <!-- FLOATING BUTTONS -->
 <a href="#contact" class="contact-float">Contact Us</a>
+<a href="https://wa.me/919294966405" target="_blank" class="whatsapp-float">DM on WhatsApp</a>
+<a href="https://t.me/axfridi" target="_blank" class="telegram-float">DM on Telegram</a>
 
-<a href="https://wa.me/919294966405" target="_blank" class="whatsapp-float">
-  DM on WhatsApp
-</a>
-
-<a href="https://t.me/axfridi" target="_blank" class="telegram-float">
-  DM on Telegram
-</a>
-
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav class="glass reveal">
   <div class="logo">Axfridi Agency</div>
   <ul>
@@ -42,7 +35,7 @@
   <h1 class="neon-text">Protecting your digital presence.</h1>
   <p>We resolve complex platform issues with discretion and proven expertise.</p>
   <div class="hero-buttons">
-    <button class="primary">Get Started</button>
+    <button class="primary" onclick="openStartModal()">Get Started</button>
     <button class="secondary">Learn More</button>
   </div>
 </section>
@@ -52,20 +45,24 @@
   <h2 class="neon-text">Our Services</h2>
 
   <div class="service-grid">
-    <div class="service-card glass reveal" onclick="openModal('Instagram', '$99', 'Account recovery & content takedowns')">
+    <div class="service-card glass reveal" onclick="openService('Instagram Removals', instagramRemovals)">
       Instagram Removals
     </div>
 
-    <div class="service-card glass reveal" onclick="openModal('Facebook', '$129', 'Page recovery & report removals')">
+    <div class="service-card glass reveal" onclick="openService('Instagram Recoveries', instagramRecoveries)">
+      Instagram Recoveries
+    </div>
+
+    <div class="service-card glass reveal" onclick="openService('Facebook Removals', facebookRemovals)">
       Facebook Removals
     </div>
 
-    <div class="service-card glass reveal" onclick="openModal('WhatsApp', '$79', 'Account bans & recovery help')">
-      WhatsApp Removals
+    <div class="service-card glass reveal" onclick="openService('TikTok Removals', tiktokRemovals)">
+      TikTok Removals
     </div>
 
-    <div class="service-card glass reveal" onclick="openModal('Twitter', '$109', 'Report takedowns & recovery')">
-      Twitter Removals
+    <div class="service-card glass reveal" onclick="openService('Many More', manyMore)">
+      Many More
     </div>
   </div>
 </section>
@@ -73,32 +70,43 @@
 <!-- ABOUT -->
 <section class="about glass reveal">
   <h2>About Us</h2>
-  <p>
-    We are a results-driven social media agency specializing in account removals, recoveries, verifications, and digital PR. Our focus is simple: protecting identities, restoring access, and building credibility online.
-Whether it’s a disabled account, impersonation issue, hacked profile, false reports, or verification hurdles, we handle complex platform policies with precision and discretion. We work across major platforms to resolve issues efficiently while maintaining complete client confidentiality.
-Beyond recovery and removals, we offer strategic PR and reputation management—helping individuals, creators, and brands establish trust, authority, and a clean digital presence.
-No shortcuts. No false promises. Just real solutions backed by experience, transparency, and professionalism.
-Your digital presence matters — we make sure it stays secure, verified, and respected.
-  </p>
+  <p> We are a results-driven social media agency specializing in account removals, recoveries, verifications, and digital PR. We handle complex platform policies with precision and discretion.
+  We work across major platforms to resolve issues efficiently while maintaining complete client confidentiality.Just real solutions backed by experience, transparency, and professionalism.
+  Your digital presence matters — we make sure it stays secure, verified, and respected.</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact reveal">
   <h2>Contact Us</h2>
-  <p>Email: axfridi@gmail.com</p>
+  <p>
+    <a href="https://t.me/axfridi">TELEGRAM</a> |
+    <a href="https://wa.me/919294966405">WHATSAPP</a> |
+    <a href="mailto:axfridi@gmail.com">EMAIL</a>
+  </p>
 </section>
 
-<!-- MODAL -->
+<!-- SERVICE MODAL -->
 <div id="serviceModal" class="modal">
   <div class="modal-content glass">
-    <span class="close" onclick="closeModal()">×</span>
+    <span class="close" onclick="closeService()">×</span>
     <h3 id="serviceTitle"></h3>
     <p id="serviceDesc"></p>
-    <h4 id="servicePrice"></h4>
-    <a href="#contact" class="primary">Contact Us</a>
+  </div>
+</div>
+
+<!-- GET STARTED MODAL -->
+<div id="startModal" class="modal">
+  <div class="modal-content glass">
+    <span class="close" onclick="closeStartModal()">×</span>
+    <div class="start-buttons">
+      <a href="https://t.me/axfridi" target="_blank" class="primary">Telegram</a>
+      <a href="https://wa.me/919294966405" target="_blank" class="primary">WhatsApp</a>
+    </div>
+    <p class="email-text">email : axfridi@gmail.com</p>
   </div>
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
+
