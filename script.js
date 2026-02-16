@@ -1,4 +1,11 @@
-// SERVICE DESCRIPTIONS
+// ===== GET ELEMENTS =====
+const serviceModal = document.getElementById("serviceModal");
+const serviceTitle = document.getElementById("serviceTitle");
+const serviceDesc  = document.getElementById("serviceDesc");
+
+const startModal = document.getElementById("startModal");
+
+// ===== SERVICE DESCRIPTIONS =====
 const instagramRemovals =
 "We expertise in Instagram account removals. Our service is 100% confidential and we offer the fastest turnaround time for Instagram removals. For more info feel free to DM.";
 
@@ -12,23 +19,42 @@ const tiktokRemovals =
 "We expertise in TikTok removals and can remove any account within 24 hours. Follower count, verified or non-verified doesn’t matter. We can absolutely remove any account.";
 
 const manyMore =
-"There are some more services that we offer. For any information or questions, feel free to reach out via Telegram or WhatsApp.\n\nTelegram: https://t.me/YOUR_USERNAME\nWhatsApp: https://wa.me/919XXXXXXXXX";
+"There are some more services that we offer. For any information or any question regarding any service feel free to reach out to us via Telegram or WhatsApp.";
 
-// MODALS
-function openService(title, desc){
+// ===== SERVICE MODAL =====
+function openService(title, desc) {
   serviceTitle.innerText = title;
   serviceDesc.innerText = desc;
-  serviceModal.style.display="block";
+  serviceModal.style.display = "block";
 }
-function closeService(){serviceModal.style.display="none"}
 
-function openStartModal(){startModal.style.display="block"}
-function closeStartModal(){startModal.style.display="none"}
+function closeService() {
+  serviceModal.style.display = "none";
+}
 
-// SCROLL REVEAL
-const reveals=document.querySelectorAll(".reveal");
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("active")})
-},{threshold:.15});
-reveals.forEach(r=>observer.observe(r));
+// ===== GET STARTED MODAL =====
+function openStartModal() {
+  startModal.style.display = "block";
+}
+
+function closeStartModal() {
+  startModal.style.display = "none";
+}
+
+// ===== SCROLL REVEAL =====
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+reveals.forEach(el => observer.observe(el));
+
 
